@@ -1,11 +1,48 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfólio - GABRIEL TRAVENSOLLI DA SILVA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gabriel Travensolli — Portfólio DSM · Fatec Jacareí</title>
+  <meta name="description" content="Portfólio acadêmico de Gabriel Travensolli da Silva no curso de Desenvolvimento de Software Multiplataforma da Fatec Jacareí: trajetória por semestre, matérias, atividades e projetos integradores.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preload" href="fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <h1>Bem vindo ao Portfólio de GABRIEL TRAVENSOLLI DA SILVA</h1>
+  <a class="pular" href="#trajetoria">Pular para a trajetória</a>
+
+  <header class="barra" id="barra">
+    <nav class="barra__nav" aria-label="Navegação principal">
+      <a class="barra__marca" href="#inicio"><span aria-hidden="true">GT</span><span class="sr-only">Início</span></a>
+      <ul class="barra__links">
+        <li><a href="#interesses">Interesses</a></li>
+        <li><a href="#trajetoria">Trajetória</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+      </ul>
+      <div class="barra__sociais" data-sociais></div>
+    </nav>
+  </header>
+
+  <div class="pagina">
+    <nav class="indice" aria-label="Índice da página" data-indice></nav>
+
+    <main class="conteudo" id="conteudo">
+      <noscript>
+        <p class="aviso">A trajetória acadêmica precisa de JavaScript para ser exibida. Veja os projetos no <a href="https://github.com/travensolli">GitHub</a>.</p>
+      </noscript>
+      <section class="secao apresentacao" id="inicio" aria-label="Apresentação"></section>
+      <section class="secao" id="interesses" aria-labelledby="t-interesses"></section>
+      <section class="secao" id="trajetoria" aria-labelledby="t-trajetoria"></section>
+      <section class="secao" id="projetos" aria-labelledby="t-projetos"></section>
+      <section class="secao" id="complementar" aria-labelledby="t-complementar"></section>
+    </main>
+  </div>
+
+  <footer class="rodape" data-rodape></footer>
+
+  <script src="dados/grade-dsm.js" defer></script>
+  <script src="dados/portfolio.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
