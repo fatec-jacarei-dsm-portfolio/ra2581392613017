@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-16",
+  atualizadoEm: "2026-09-17",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -124,6 +124,13 @@ window.PORTFOLIO = {
       descricao: "Carrega o CSV oficial de resultados no PostgreSQL e disponibiliza os dados via API REST.",
       tecnologias: ["Node.js", "Express", "PostgreSQL"],
       privado: true
+    },
+    {
+      materia: "ISW-031",
+      nome: "BirdSpot — Protótipo de rede social de observação de aves",
+      repo: "https://github.com/travensolli/isw031-birdspot",
+      descricao: "Protótipo de alta fidelidade no Figma de um aplicativo móvel para registro e compartilhamento de avistamentos de aves, com telas de login, feed, lista de contatos e perfil.",
+      tecnologias: ["Figma", "UI Design", "Prototipação"]
     }
   ],
 
