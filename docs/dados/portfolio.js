@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-14",
+  atualizadoEm: "2026-09-16",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -132,12 +132,11 @@ window.PORTFOLIO = {
   // As matérias integradas vêm da grade (grade-dsm.js) e não precisam ser repetidas aqui.
   abp: {
     "1DSM": {
-      nome: "Scrum Flow — backend",
-      repo: "https://github.com/travensolli/backend-scrum-flow-abp",
-      descricao: "API REST para gestão de usuários, módulos, questões e exames em ambientes educacionais, com autenticação JWT.",
-      contribuicao: "<o que você fez: partes do código, decisões e responsabilidades no time>",
-      tecnologias: ["Node.js", "Express", "PostgreSQL", "JWT"],
-      privado: true
+      nome: "ScrumFlow — Portal de Certificação em Metodologias Ágeis",
+      repo: "https://github.com/DEVassos/scrum-flow-abp",
+      descricao: "Portal web de certificação interna em metodologias ágeis: o usuário se cadastra, responde avaliações em módulos de dificuldade crescente com questões sorteadas e, ao concluir todos, recebe um certificado digital validável por hash. Desenvolvido em três sprints por uma equipe de sete alunos, com front-end sem frameworks e API própria.",
+      contribuicao: "Fui o Scrum Master nas três sprints: facilitei as dailies e as demais cerimônias, mantive o burndown e o Kanban, estruturei o repositório com Git Flow e produzi a documentação do projeto (atas, backlog, relatórios de contribuição, diagramas UML e modelos de banco). Como desenvolvedor, atuei no backend: criei o validador e sanitizador de CPF, o middleware de autenticação JWT, o repositório de usuários, as regras de validação do cadastro e a lógica de sorteio de questões, além dos scripts de inicialização e carga do PostgreSQL.",
+      tecnologias: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL", "JWT"]
     },
     "2DSM": null // em desenvolvimento
   },
