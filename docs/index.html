@@ -6,6 +6,16 @@
   <title>Gabriel Travensolli — Portfólio DSM · Fatec Jacareí</title>
   <meta name="description" content="Portfólio acadêmico de Gabriel Travensolli da Silva no curso de Desenvolvimento de Software Multiplataforma da Fatec Jacareí: trajetória por semestre, matérias, atividades e projetos integradores.">
   <meta name="color-scheme" content="light dark">
+
+  <!-- Tema escolhido pelo visitante: aplicado antes da primeira pintura, porque js/app.js usa defer.
+       Precisa ficar antes da folha de estilo. A chave é a mesma de CHAVE_TEMA em js/app.js. -->
+  <script>
+    try {
+      const tema = localStorage.getItem("portfolio-tema");
+      if (tema === "claro" || tema === "escuro") document.documentElement.dataset.tema = tema;
+    } catch (erro) { /* armazenamento bloqueado (file:// em alguns navegadores): segue o tema do sistema */ }
+  </script>
+
   <link rel="preload" href="fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/estilo.css">
 </head>
@@ -20,6 +30,7 @@
         <li><a href="#trajetoria">Trajetória</a></li>
         <li><a href="#projetos">Projetos</a></li>
       </ul>
+      <div data-seletor-tema></div>
       <div class="barra__sociais" data-sociais></div>
     </nav>
   </header>
