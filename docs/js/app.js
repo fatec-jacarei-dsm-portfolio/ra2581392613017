@@ -14,7 +14,9 @@
     },
     externo: { d: "M7 17 17 7M8 7h9v9" },
     play: { preenchido: true, d: "M8 5.14v13.72a1 1 0 0 0 1.52.85l11-6.86a1 1 0 0 0 0-1.7l-11-6.86A1 1 0 0 0 8 5.14z" },
-    seta: { d: "m9 6 6 6-6 6" }
+    seta: { d: "m9 6 6 6-6 6" },
+    sol: { d: "M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M17.66 6.34l1.41-1.41M4.93 19.07l1.41-1.41" },
+    lua: { d: "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" }
   };
 
   const ROTULO_STATUS = {
@@ -22,6 +24,9 @@
     andamento: "em andamento",
     futuro: "a seguir"
   };
+
+  // A mesma chave é lida pelo script do <head> em index.html, antes da primeira pintura.
+  const CHAVE_TEMA = "portfolio-tema";
 
   const avisar = (...mensagem) => console.warn("[portfólio]", ...mensagem);
 
@@ -58,6 +63,7 @@
   const abps = validarAbps(DADOS.abp);
 
   renderBarra();
+  renderTema();
   renderApresentacao();
   renderInteresses(DADOS.interesses || {});
   renderTrajetoria();
@@ -84,6 +90,42 @@
         "aria-label": `${social.nome} (abre em nova aba)`
       }, icone(social.icone)));
     });
+  }
+
+  function renderTema() {
+    const alvo = document.querySelector("[data-seletor-tema]");
+    const botao = el("button", { class: "icone-link barra__tema", type: "button" });
+    const situacao = el("span", { class: "sr-only", role: "status" });
+    const sistemaEscuro = window.matchMedia("(prefers-color-scheme: dark)");
+    // Sem data-tema no <html> ninguém fixou nada: quem decide é o sistema.
+    const temaEmUso = () => document.documentElement.dataset.tema
+      || (sistemaEscuro.matches ? "escuro" : "claro");
+
+    const pintar = (anunciar) => {
+      const atual = temaEmUso();
+      const rotulo = `Ativar tema ${atual === "escuro" ? "claro" : "escuro"}`;
+      botao.replaceChildren(icone(atual === "escuro" ? "sol" : "lua"));
+      botao.setAttribute("title", rotulo);
+      botao.setAttribute("aria-label", rotulo);
+      if (anunciar) situacao.textContent = `Tema ${atual} ativado.`;
+    };
+
+    botao.addEventListener("click", () => {
+      const escolhido = temaEmUso() === "escuro" ? "claro" : "escuro";
+      document.documentElement.dataset.tema = escolhido;
+      try {
+        localStorage.setItem(CHAVE_TEMA, escolhido);
+      } catch (erro) {
+        // Armazenamento bloqueado (file:// em alguns navegadores): a escolha vale só nesta visita.
+      }
+      pintar(true);
+    });
+
+    // Enquanto o visitante não fixar um tema, o ícone acompanha a troca de tema do sistema.
+    sistemaEscuro.addEventListener("change", () => pintar(false));
+
+    pintar(false);
+    anexar(alvo, botao, situacao);
   }
 
   function renderApresentacao() {
