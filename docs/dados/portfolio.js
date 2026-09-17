@@ -89,41 +89,45 @@ window.PORTFOLIO = {
     },
     {
       materia: "ISW-028",
-      nome: "Atividade 1 — Aplicação Node.js + Express",
-      repo: "https://github.com/travensolli/dev-web1-atv1",
-      descricao: "Primeira aplicação web da disciplina, com servidor em Express.",
-      tecnologias: ["Node.js", "Express"],
-      privado: true
+      nome: "Atividade 1 — Servidor de páginas estáticas com Express",
+      repo: "https://github.com/travensolli/isw028-atividade1",
+      descricao: "Servidor Node.js com Express que expõe rotas dedicadas para home, login e cadastro, serve arquivos estáticos e devolve uma página 404 com o status HTTP correto.",
+      tecnologias: ["Node.js", "Express", "HTML", "CSS"]
     },
     {
       materia: "ISW-028",
-      nome: "Atividade 2 — Consulta com requisição HTTP",
-      repo: "https://github.com/travensolli/dev-web1-atv2",
-      descricao: "Aplicação web que consulta dados por meio de requisições HTTP.",
-      privado: true
+      nome: "Atividade 2 — Consulta de CEP com fetch",
+      repo: "https://github.com/travensolli/isw028-atividade2",
+      descricao: "Página que consulta endereços na API pública ViaCEP direto do navegador, com validação da entrada e estados de carregamento, sucesso e erro na interface.",
+      tecnologias: ["JavaScript", "Node.js", "Express", "Fetch API"]
     },
     {
       materia: "ISW-028",
-      nome: "Atividade 3 — Cadastro de usuários",
-      repo: "https://github.com/travensolli/dev-web1-atv3",
-      descricao: "Aplicação web para cadastro, listagem e exclusão de usuários.",
-      privado: true
+      nome: "Atividade 3 — CRUD de usuários com PostgreSQL",
+      repo: "https://github.com/travensolli/isw028-atividade3",
+      descricao: "API REST em Express com PostgreSQL para cadastrar, listar e excluir usuários, com SQL parametrizado e front-end que consome os endpoints via fetch.",
+      tecnologias: ["Node.js", "Express", "PostgreSQL"]
     },
     {
       materia: "ISW-028",
-      nome: "Atividade 4 — Cadastro de jogos da Mega-Sena",
-      repo: "https://github.com/travensolli/dev-web1-atv4",
-      descricao: "Front-end com fetch e validação consumindo uma API REST que grava no PostgreSQL.",
-      tecnologias: ["JavaScript", "Node.js", "Express", "PostgreSQL"],
-      privado: true
+      nome: "Atividade 4 — Registro de apostas da Mega-Sena",
+      repo: "https://github.com/travensolli/isw028-atividade4",
+      descricao: "Aplicação que registra e lista jogos da Mega-Sena, com validação das seis dezenas no front, API em Express e persistência em PostgreSQL.",
+      tecnologias: ["Node.js", "Express", "PostgreSQL"]
     },
     {
       materia: "ISW-028",
-      nome: "Atividade 5 — API Mega-Sena",
-      repo: "https://github.com/travensolli/dev-web1-atv5",
-      descricao: "Carrega o CSV oficial de resultados no PostgreSQL e disponibiliza os dados via API REST.",
-      tecnologias: ["Node.js", "Express", "PostgreSQL"],
-      privado: true
+      nome: "Atividade 5 — Consulta de resultados da Mega-Sena",
+      repo: "https://github.com/travensolli/isw028-atividade5",
+      descricao: "Consulta de concursos da Mega-Sena sobre uma base de 3.005 sorteios carregada de CSV no PostgreSQL, com endpoints para o último resultado e para busca por número.",
+      tecnologias: ["Node.js", "Express", "PostgreSQL", "CSV"]
+    },
+    {
+      materia: "ISW-028",
+      nome: "Prática — Grade de horários com layout em CSS",
+      repo: "https://github.com/travensolli/isw028-layout-css",
+      descricao: "Página estática com a grade semanal de aulas dos seis semestres em tabelas, construída com Flexbox, variáveis CSS, gradientes e navegação interna por âncoras.",
+      tecnologias: ["HTML", "CSS", "Flexbox"]
     },
     {
       materia: "ISW-031",
