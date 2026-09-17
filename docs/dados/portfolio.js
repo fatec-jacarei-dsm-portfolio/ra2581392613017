@@ -33,11 +33,59 @@ window.PORTFOLIO = {
   atividades: [
     {
       materia: "IAL-010",
-      nome: "Atividade 7 — Prática de algoritmos",
-      repo: "https://github.com/travensolli/algoritmos-atividade7",
-      descricao: "Exercícios de algoritmos resolvidos em TypeScript.",
-      tecnologias: ["TypeScript"],
-      privado: true
+      nome: "Atividade 1 — Estruturas de decisão e repetição while",
+      repo: "https://github.com/travensolli/ial010-atividade1",
+      descricao: "Dez programas de console que exercitam estruturas de decisão, repetição com while e geração de números aleatórios com a classe Math.",
+      tecnologias: ["JavaScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 2 — Laço for, tabela ASCII e strings",
+      repo: "https://github.com/travensolli/ial010-atividade2",
+      descricao: "Dez programas com laço for aplicado a números, códigos ASCII, strings e arrays.",
+      tecnologias: ["JavaScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 3 — Funções",
+      repo: "https://github.com/travensolli/ial010-atividade3",
+      descricao: "Dez funções que resolvem impressão de intervalos, operações aritméticas, concatenação de textos, somatório e fatorial.",
+      tecnologias: ["JavaScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 4 — Arrays e matrizes",
+      repo: "https://github.com/travensolli/ial010-atividade4",
+      descricao: "Dez funções para criar e manipular arrays unidimensionais e bidimensionais a partir de strings e intervalos numéricos.",
+      tecnologias: ["JavaScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 5 — Funções, arrays e JSON",
+      repo: "https://github.com/travensolli/ial010-atividade5",
+      descricao: "Dez funções que convertem textos em dados, sorteiam, ordenam e filtram arrays e devolvem resultados em JSON.",
+      tecnologias: ["JavaScript", "Node.js", "JSON"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 6 — Algoritmos em TypeScript",
+      repo: "https://github.com/travensolli/ial010-atividade6",
+      descricao: "Dez algoritmos sobre strings, arrays e tipos: palíndromos, força de senha, filas, cifra de César, ranking e compactação RLE.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 7 — Tipos e estruturas de dados em TypeScript",
+      repo: "https://github.com/travensolli/ial010-atividade7",
+      descricao: "Cinco algoritmos: análise estatística de notas, biblioteca de frases, triagem de mensagens suspeitas, histórico em pilha e lista de tarefas.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "IAL-010",
+      nome: "Atividade 8 — Sistema de atendimento com fila preferencial",
+      repo: "https://github.com/travensolli/ial010-atividade8",
+      descricao: "Aplicação de terminal com fila normal e fila preferencial atendidas de forma alternada por um menu interativo.",
+      tecnologias: ["TypeScript", "Node.js", "prompt-sync"]
     },
     {
       materia: "ISW-028",
