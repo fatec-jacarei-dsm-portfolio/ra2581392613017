@@ -68,8 +68,10 @@
   --curva: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
+/* Escuro automático: vale enquanto o visitante não fixar o claro no botão de tema. */
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-tema="claro"]) {
     --papel: #141412;
     --papel-2: #1D1C19;
     --tinta: #EDE8DD;
@@ -80,6 +82,28 @@
     --caneta-suave: #1F2540;
     --ok: #7FBF8E;
   }
+}
+
+/* Tema fixado pelo visitante: data-tema no <html>, escrito pelo script do <head> e pelo app.js.
+   Comutar color-scheme é o que acerta barra de rolagem, seleção de texto e controles nativos.
+   A paleta escura aparece duas vezes porque @media não se combina com seletor de atributo na
+   mesma regra — ao mudar uma cor, mude nos dois blocos e na tabela do design.md §4.1. */
+
+:root[data-tema="claro"] {
+  color-scheme: light;
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --papel: #141412;
+  --papel-2: #1D1C19;
+  --tinta: #EDE8DD;
+  --tinta-2: #B7B1A5;
+  --tinta-3: #9A9488;
+  --linha: #2E2C28;
+  --caneta: #8FA3FF;
+  --caneta-suave: #1F2540;
+  --ok: #7FBF8E;
 }
 
 *,
@@ -213,7 +237,7 @@ h4 {
 .barra__nav {
   display: flex;
   align-items: center;
-  gap: var(--e-4);
+  gap: var(--e-3);
   max-width: var(--largura-max);
   height: var(--barra-altura);
   margin-inline: auto;
@@ -231,8 +255,8 @@ h4 {
 
 .barra__links {
   display: flex;
-  gap: var(--e-4);
-  font-size: var(--t-pequeno);
+  gap: var(--e-3);
+  font-size: var(--t-meta);
 }
 
 .barra__links a {
@@ -270,6 +294,22 @@ h4 {
 .icone-link svg {
   width: 20px;
   height: 20px;
+}
+
+.barra__tema {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Amplia o alvo de toque para 44px sem mexer na caixa de 40px que a barra reserva. */
+
+.barra__tema::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
 }
 
 /* Estrutura */
@@ -1099,6 +1139,12 @@ a.atividade__nome:hover {
 
 /* Responsivo */
 
+@media (min-width: 22.5rem) {
+  .barra__links {
+    font-size: var(--t-pequeno);
+  }
+}
+
 @media (min-width: 30rem) {
   .acoes {
     flex-direction: row;
@@ -1126,6 +1172,11 @@ a.atividade__nome:hover {
   .apresentacao__foto {
     width: 112px;
     height: 112px;
+  }
+
+  .barra__nav,
+  .barra__links {
+    gap: var(--e-4);
   }
 
   .barra__sociais {

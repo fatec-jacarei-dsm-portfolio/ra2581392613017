@@ -3,7 +3,7 @@
 > **Desenvolvimento de Software Multiplataforma (DSM)** · Fatec Jacareí — Prof. Francisco de Moura
 > RA 2581392613017 · Turma 1º Sem. 2026 · Publicação: `https://fatec-jacarei-dsm-portfolio.github.io/ra2581392613017/`
 >
-> Referência de design e de arquitetura de conteúdo do portfólio. Versão 1.0 — 2026-09-11.
+> Referência de design e de arquitetura de conteúdo do portfólio. Versão 1.1 — 2026-09-17.
 
 ## Sumário
 
@@ -82,7 +82,7 @@ Página única, nesta ordem:
 
 | # | Seção | Âncora | Conteúdo |
 |---|---|---|---|
-| 1 | Barra fixa | — | Monograma, links âncora, GitHub/LinkedIn |
+| 1 | Barra fixa | — | Monograma, links âncora, botão de tema, GitHub/LinkedIn |
 | 2 | Apresentação | `#inicio` | Foto, nome, curso, turma, bio, links, pitch, progresso |
 | 3 | Interesses | `#interesses` | Áreas de estudo · Onde aplico · Fora do código |
 | 4 | Trajetória acadêmica | `#trajetoria` | Linha do tempo 1DSM → 6DSM (núcleo, §6) |
@@ -94,7 +94,7 @@ Página única, nesta ordem:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ GT                                  Interesses  Trajetória  Projetos  ⌥ in │  barra fixa
+│ GT                               Interesses  Trajetória  Projetos  ☾  ⌥ in │  barra fixa
 └────────────────────────────────────────────────────────────────────────────┘
 
   ÍNDICE (fixo)        ┌──────────────────────────────────────────────────┐
@@ -128,7 +128,7 @@ Página única, nesta ordem:
 
 ```
 ┌──────────────────────────────────┐
-│ GT    Interesses Trajetória Proj.│
+│ GT  Interesses Trajetória Proj. ☾│
 ├──────────────────────────────────┤
 │ ( foto )                         │
 │ Gabriel Travensolli              │
@@ -167,9 +167,9 @@ Página única, nesta ordem:
 
 - Altura 56px, fundo `--papel` sólido. A borda inferior `1px --linha` aparece depois de 8px de rolagem.
 - Esquerda: monograma **GT** em Fraunces, com link para `#inicio`.
-- Direita: links `Interesses · Trajetória · Projetos`. A partir de 40rem entram também os ícones de GitHub e LinkedIn.
-- Sem menu hambúrguer: os 3 links cabem em 400px.
-- A partir de 64rem, o índice lateral (§8.3) assume a navegação e a barra mostra só o monograma e os ícones.
+- Direita: links `Interesses · Trajetória · Projetos` e, em seguida, o botão de tema (§5.10). A partir de 40rem entram também os ícones de GitHub e LinkedIn, sempre depois do botão de tema.
+- Sem menu hambúrguer: os 3 links e o botão de tema cabem em 320px. Para isso, os espaçamentos da barra são `--e-3` abaixo de 40rem (e `--e-4` daí para cima) e os links caem para `--t-meta` abaixo de 22.5rem (§8.2).
+- A partir de 64rem, o índice lateral (§8.3) assume a navegação e a barra mostra só o monograma, o botão de tema e os ícones.
 
 ### 3.2 Apresentação (`#inicio`)
 
@@ -239,7 +239,7 @@ GitHub · LinkedIn                                  Atualizado em 11/09/2026
 
 ### 4.1 Cores
 
-Tema claro por padrão; tema escuro automático via `prefers-color-scheme`.
+Três situações: **automático** (padrão — segue o `prefers-color-scheme` do sistema), **claro** e **escuro**, escolhidos no botão de tema da barra (§5.10). A escolha vira `data-tema="claro"` ou `data-tema="escuro"` no `<html>` e é gravada em `localStorage["portfolio-tema"]`; enquanto não houver escolha, o atributo não existe e quem decide é o sistema. As cores são as mesmas nos dois caminhos — a tabela abaixo continua sendo a única fonte da paleta.
 
 | Token | Uso | Claro | Escuro |
 |---|---|---|---|
@@ -265,7 +265,7 @@ Tema claro por padrão; tema escuro automático via `prefers-color-scheme`.
 | `--papel` sobre `--caneta` (botão primário) | 6.47 | 7.77 |
 | `--ok` sobre `--papel` / `--papel-2` | 5.51 / 5.05 | 8.56 / 7.91 |
 
-Regra: **cor nunca é o único sinal**. Todo status tem texto ("concluído", "em andamento", "a seguir").
+Regra: **cor nunca é o único sinal**. Todo status tem texto ("concluído", "em andamento", "a seguir"). Vale também para o botão de tema: além do ícone, ele tem nome acessível descrevendo a ação ("Ativar tema escuro" / "Ativar tema claro").
 
 ```css
 :root {
@@ -281,8 +281,9 @@ Regra: **cor nunca é o único sinal**. Todo status tem texto ("concluído", "em
   --ok: #356E45;
 }
 
+/* Escuro automático: vale enquanto o visitante não fixar o claro no botão (§5.10). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-tema="claro"]) {
     --papel: #141412;
     --papel-2: #1D1C19;
     --tinta: #EDE8DD;
@@ -294,7 +295,25 @@ Regra: **cor nunca é o único sinal**. Todo status tem texto ("concluído", "em
     --ok: #7FBF8E;
   }
 }
+
+/* Tema fixado pelo visitante, mesmo contrariando o sistema. */
+:root[data-tema="claro"] { color-scheme: light; }
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --papel: #141412;
+  --papel-2: #1D1C19;
+  --tinta: #EDE8DD;
+  --tinta-2: #B7B1A5;
+  --tinta-3: #9A9488;
+  --linha: #2E2C28;
+  --caneta: #8FA3FF;
+  --caneta-suave: #1F2540;
+  --ok: #7FBF8E;
+}
 ```
+
+> A paleta escura aparece duas vezes de propósito: `@media` não se combina com um seletor de atributo na mesma regra. `light-dark()` resolveria a duplicação, mas foi descartada porque, em navegador sem suporte, a custom property fica inválida no cálculo e a página perde a paleta inteira. Ao mudar uma cor, mude nos dois blocos e na tabela acima.
 
 ### 4.2 Tipografia
 
@@ -430,7 +449,23 @@ Mono `--t-rotulo` em `--tinta-3` (em `--caneta` dentro do bloco ABP). Usado em "
 
 ### 5.9 Ícones
 
-SVG inline com `aria-hidden="true"` e `fill`/`stroke: currentColor`: GitHub, LinkedIn, ↗ externo, ▶ play e chevron. Os paths ficam fixos no `app.js`, nunca vêm dos dados. Nenhuma biblioteca de ícones.
+SVG inline com `aria-hidden="true"` e `fill`/`stroke: currentColor`: GitHub, LinkedIn, ↗ externo, ▶ play, chevron, ☀ sol e ☾ lua. Os paths ficam fixos no `app.js`, nunca vêm dos dados. Nenhuma biblioteca de ícones.
+
+### 5.10 Botão de tema
+
+`<button type="button" class="icone-link barra__tema">` na barra fixa (§3.1), montado pelo `app.js` em `renderTema()` dentro de `<div data-seletor-tema></div>`: sem JavaScript o botão não existe e a página segue o tema do sistema.
+
+| Parte | Especificação |
+|---|---|
+| Aparência | Mesma caixa dos ícones sociais (`.icone-link`): 40×40px, `--raio-p`, ícone de 20px em `--tinta-2`; no hover, fundo `--papel-2` e ícone `--tinta`. Um `::before` com `inset: -2px` amplia o alvo de toque para 44×44px (§8.1) sem alterar o layout |
+| Ícone | ☾ lua quando o tema em uso é o claro; ☀ sol quando é o escuro — o ícone mostra para onde o clique leva |
+| Nome acessível | `aria-label` e `title` com a ação: "Ativar tema escuro" / "Ativar tema claro", trocados a cada clique. Um `<span class="sr-only" role="status">` irmão anuncia "Tema escuro ativado." (vazio no carregamento, para não falar nada ao abrir a página) |
+| Estado | `data-tema="claro"` ou `data-tema="escuro"` no `<html>`. Sem o atributo, vale o `prefers-color-scheme` (§4.1), e o ícone acompanha a troca de tema do sistema via `matchMedia` |
+| Persistência | `localStorage["portfolio-tema"]` dentro de `try/catch`, sem aviso no console: em `file://` alguns navegadores bloqueiam o acesso e, nesse caso, a escolha vale só nesta visita. Valor inválido é ignorado |
+
+- Um clique alterna claro ⇄ escuro. Sem menu, sem `<select>` e sem terceiro estado visível: "automático" é o estado inicial, antes do primeiro clique — depois dele só se volta ao automático limpando o armazenamento.
+- Visível em todas as faixas, inclusive abaixo de 40rem, onde GitHub e LinkedIn somem: esses dois estão duplicados na apresentação e no rodapé, o botão de tema não tem duplicata.
+- A troca não anima (§7): a paleta muda no mesmo quadro.
 
 ---
 
@@ -622,6 +657,7 @@ A rolagem compensa a barra fixa com `scroll-margin-top: 72px`.
 | Segmento atual do progresso | Preenchimento de 0 → % ao carregar | `600ms`, `--curva` | Já no valor final |
 | Rolagem para âncoras | `scroll-behavior: smooth` | Nativa | `auto` |
 | Hover (links, linhas) | Cor | `--dur-rapida` | Mantido (não é movimento) |
+| Troca de tema (§5.10) | Nenhuma: a paleta muda no mesmo quadro | — | Igual |
 
 ```css
 @media (prefers-reduced-motion: no-preference) {
@@ -640,6 +676,7 @@ A rolagem compensa a barra fixa com `scroll-margin-top: 72px`.
 
 - Navegadores sem suporte a `::details-content` abrem sem animação (melhoria progressiva).
 - **Revelação sem risco**: o estado inicial oculto só vale com a classe `html.js`, aplicada pelo `app.js`. Se o JS falhar, nada fica invisível.
+- **Troca de tema sem animação**: não há `transition` própria nem *crossfade* da página. As transições de cor existentes são de hover (`--dur-rapida`), então só esses poucos elementos fazem um fade de 150ms na troca.
 - **Proibidos:** partículas, parallax, gradientes animados, texto "digitando", cursor customizado, scroll-jacking.
 
 ---
@@ -656,22 +693,25 @@ A rolagem compensa a barra fixa com `scroll-margin-top: 72px`.
 - [ ] Status sempre em texto; contador com texto oculto visualmente ("5 atividades").
 - [ ] Foco visível em tudo que é interativo (§4.5); nunca `outline: none` sem substituto.
 - [ ] Contraste AA verificado (§4.1).
-- [ ] Alvos de toque com ≥ 44px de altura (linhas de matéria, botões).
+- [ ] Alvos de toque com ≥ 44px de altura (linhas de matéria, botões, botão de tema).
 - [ ] Links externos com `rel="noopener noreferrer"` + "(abre em nova aba)".
 - [ ] Foto com `alt="Foto de Gabriel Travensolli"` e `width`/`height` definidos.
-- [ ] `prefers-reduced-motion` (§7) e `prefers-color-scheme` (§4.1) respeitados.
+- [ ] `prefers-reduced-motion` (§7) respeitado.
+- [ ] `prefers-color-scheme` (§4.1) respeitado como padrão, enquanto o visitante não escolher um tema no botão (§5.10).
+- [ ] Botão de tema com nome acessível que descreve a ação, foco visível (§4.5) e contraste AA conferido nos dois temas, inclusive com a escolha contrária à do sistema.
 - [ ] `<noscript>`: "A trajetória acadêmica precisa de JavaScript para ser exibida." + link para o GitHub.
 
 ### 8.2 Breakpoints
 
 | Faixa | Mudanças |
 |---|---|
+| < 22.5rem (360px) | Links da barra em `--t-meta` para caber junto do botão de tema |
 | < 30rem (480px) | Carga horária oculta; botões da apresentação empilhados |
 | 30–40rem | Carga horária visível; Interesses e Complementar empilhados |
 | ≥ 40rem (640px) | Interesses em 3 colunas; Complementar em 2 colunas; atividades alinhadas sob o nome; ícones na barra |
-| ≥ 64rem (1024px) | Índice lateral fixo; barra superior só com monograma + ícones |
+| ≥ 64rem (1024px) | Índice lateral fixo; barra superior só com monograma + botão de tema + ícones |
 
-Regras gerais: nenhuma largura mínima maior que a tela, nada de rolagem horizontal, `img { max-width: 100% }`, `overflow-wrap: anywhere` em nomes de repositório.
+Regras gerais: nenhuma largura mínima maior que a tela, nada de rolagem horizontal, `img { max-width: 100% }`, `overflow-wrap: anywhere` em nomes de repositório. O botão de tema (§5.10) aparece em todas as faixas; abaixo de 40rem os espaçamentos da barra caem para `--e-3` para tudo continuar cabendo em 320px.
 
 ### 8.3 Índice lateral (≥ 64rem)
 
@@ -694,7 +734,7 @@ ra2581392613017/
 ├── design.md                     este documento (fora de docs/, não é publicado)
 └── docs/                         publicado pelo GitHub Pages
     ├── .nojekyll
-    ├── index.html                esqueleto: header, main com seções vazias, noscript
+    ├── index.html                esqueleto: header, main vazio, noscript, script do tema
     ├── css/
     │   └── estilo.css            tokens (§4) + componentes (§5–§6)
     ├── js/
@@ -706,6 +746,17 @@ ra2581392613017/
     │   └── fraunces-var-latin.woff2
     └── img/
         └── foto.jpg
+```
+
+No `<head>`, antes da folha de estilo, um script inline aplica o tema escolhido antes da primeira pintura — os scripts com `defer` rodam depois do parse e a página piscaria no tema do sistema:
+
+```html
+<script>
+  try {
+    const tema = localStorage.getItem("portfolio-tema");
+    if (tema === "claro" || tema === "escuro") document.documentElement.dataset.tema = tema;
+  } catch (erro) { /* armazenamento bloqueado em file://: segue o tema do sistema */ }
+</script>
 ```
 
 Ordem dos scripts no final do `<body>` de `index.html`:
@@ -924,6 +975,7 @@ window.PORTFOLIO = {
 - Atividades aparecem na ordem do arquivo, agrupadas pela matéria da sigla.
 - Status, rótulos e contadores são calculados (§6.7).
 - Aplica `html.classList.add("js")` antes de renderizar (§7).
+- Monta o botão de tema em `[data-seletor-tema]` e alterna `data-tema` no `<html>`, gravando em `localStorage["portfolio-tema"]` dentro de `try/catch` (§5.10). Com o armazenamento bloqueado, a escolha vale só nesta visita, sem aviso no console.
 - Depois de renderizar, trata o hash da URL (§6.7).
 
 ### 9.5 Como adicionar uma atividade
@@ -1137,7 +1189,7 @@ Modelo de descrição do PR:
 ## Checklist
 - [ ] Abri `docs/index.html` localmente e está funcionando
 - [ ] Testei em ~400px de largura
-- [ ] Testei em modo escuro
+- [ ] Testei nos dois temas: automático (pelo sistema) e alternando no botão
 - [ ] Links conferidos
 - [ ] Console sem avisos `[portfólio]`
 ```
@@ -1162,3 +1214,4 @@ Cada item em branch própria, seguindo a §12:
 | 4 | — (GitHub) | Tornar públicos os repositórios acadêmicos da §2.1 e remover `privado: true` numa branch `content/` |
 | 5 | `content/contribuicoes` | Preencher "Minha parte" da ABP e dos projetos pessoais, gostos pessoais e idiomas |
 | 6 | `content/pitch-2dsm` | Gravar o pitch 2DSM e adicionar o link em `perfil.links.pitch` e no README |
+| 7 | `feature/seletor-de-tema` | Botão de tema na barra (§5.10), com persistência em `localStorage` |
