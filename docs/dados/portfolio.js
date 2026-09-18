@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-17",
+  atualizadoEm: "2026-09-18",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -16,7 +16,7 @@ window.PORTFOLIO = {
     ],
     links: {
       github: "https://github.com/travensolli",
-      linkedin: "https://linkedin.com/in/travensolli",
+      linkedin: "https://www.linkedin.com/in/gabrieltravensolli/",
       pitch: null // opcional: link do vídeo pitch do semestre par mais recente
     }
   },
@@ -135,6 +135,13 @@ window.PORTFOLIO = {
       repo: "https://github.com/travensolli/isw031-birdspot",
       descricao: "Protótipo de alta fidelidade no Figma de um aplicativo móvel para registro e compartilhamento de avistamentos de aves, com telas de login, feed, lista de contatos e perfil.",
       tecnologias: ["Figma", "UI Design", "Prototipação"]
+    },
+    {
+      materia: "IES-011",
+      nome: "Modelagem UML — Sistema acadêmico",
+      repo: "https://github.com/travensolli/ies011-uml-sistema-academico",
+      descricao: "Modelagem UML de um sistema acadêmico com diagrama de casos de uso, diagrama de classes e nove diagramas de sequência rastreados aos requisitos funcionais.",
+      tecnologias: ["UML", "Astah"]
     }
   ],
 
@@ -185,8 +192,13 @@ window.PORTFOLIO = {
   profissionais: [],
 
   complementar: {
-    formacao: ["Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)"],
-    cursos: ["Formação em Dados — DNC"],
+    formacao: [
+      "Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)",
+      "Bacharelado em Engenharia de Controle e Automação — UNIFEI, Campus Itabira (concluído em 12/2017)"
+    ],
+    cursos: [
+      { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" }
+    ],
     idiomas: ["<idioma — nível>"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }

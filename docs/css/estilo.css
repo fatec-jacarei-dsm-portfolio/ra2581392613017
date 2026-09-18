@@ -706,13 +706,15 @@ details[open] > summary .seta {
 }
 
 .semestre__resumo,
-.materia > summary {
+.materia > summary,
+.abp__resumo {
   list-style: none;
   cursor: pointer;
 }
 
 .semestre__resumo::-webkit-details-marker,
-.materia > summary::-webkit-details-marker {
+.materia > summary::-webkit-details-marker,
+.abp__resumo::-webkit-details-marker {
   display: none;
 }
 
@@ -784,10 +786,30 @@ details[open] > summary .seta {
   margin-block-start: var(--e-3);
 }
 
+.abp__linha .seta {
+  align-self: center;
+}
+
+.abp__resumo:hover .abp__nome {
+  color: var(--caneta);
+}
+
+.abp__resumo:focus-visible {
+  outline-offset: -2px;
+}
+
 .abp__nome,
 .projeto__nome {
   font-size: var(--t-item);
   line-height: 1.35;
+}
+
+.abp__corpo {
+  margin-block-start: var(--e-3);
+}
+
+.abp__repo {
+  margin-block-start: var(--e-2);
 }
 
 .abp__descricao,

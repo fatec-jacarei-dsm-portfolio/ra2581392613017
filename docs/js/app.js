@@ -312,16 +312,21 @@
 
     const contribuicao = texto(projeto.contribuicao);
     const descricao = texto(projeto.descricao);
+    const repositorio = linkRepositorio(projeto);
 
     return el("article", { class: "abp", id, "aria-labelledby": `${id}-nome` },
-      topo,
-      el("div", { class: "abp__linha" },
-        el("h4", { class: "abp__nome", id: `${id}-nome` }, projeto.nome),
-        linkRepositorio(projeto)),
-      descricao ? el("p", { class: "abp__descricao" }, descricao) : null,
-      contribuicao ? blocoContribuicao(contribuicao) : null,
-      tecnologias(projeto.tecnologias),
-      renderIntegracao(semestre.abp));
+      el("details", { class: "abp__detalhes" },
+        el("summary", { class: "abp__resumo" },
+          topo,
+          el("div", { class: "abp__linha" },
+            el("h4", { class: "abp__nome", id: `${id}-nome` }, projeto.nome),
+            icone("seta", "seta"))),
+        el("div", { class: "abp__corpo" },
+          repositorio ? el("p", { class: "abp__repo" }, repositorio) : null,
+          descricao ? el("p", { class: "abp__descricao" }, descricao) : null,
+          contribuicao ? blocoContribuicao(contribuicao) : null,
+          tecnologias(projeto.tecnologias),
+          renderIntegracao(semestre.abp))));
   }
 
   function renderIntegracao(integracao) {
@@ -407,7 +412,7 @@
     const secao = document.getElementById("complementar");
     const blocos = [
       ["Formação", lista(complementar.formacao), false],
-      ["Cursos e certificações", lista(complementar.cursos), false],
+      ["Cursos e certificações", cursos(complementar.cursos), false],
       ["Idiomas", lista(complementar.idiomas), false],
       ["Conhecimentos técnicos", lista(complementar.conhecimentos), true]
     ].filter(([, itens]) => itens.length);
@@ -670,6 +675,25 @@
   function lista(valores) {
     if (valores === undefined || valores === null) return [];
     return (Array.isArray(valores) ? valores : [valores]).map(texto).filter(Boolean);
+  }
+
+  // Cursos aceitam texto ou { nome, url }. Com url, o nome ganha um link curto
+  // para a página de verificação, no mesmo padrão de "repositório ↗".
+  function cursos(valores) {
+    if (valores === undefined || valores === null) return [];
+    return (Array.isArray(valores) ? valores : [valores]).flatMap((item, i) => {
+      if (typeof item === "string") {
+        const nome = texto(item);
+        return nome ? [nome] : [];
+      }
+      const nome = item && typeof item === "object" ? texto(item.nome) : null;
+      if (!nome) {
+        avisar(`complementar.cursos[${i}]: falta "nome" — item ignorado.`);
+        return [];
+      }
+      const url = linkSeguro(item.url, `complementar.cursos[${i}].url`);
+      return [url ? [nome, " ", linkExterno(url, "certificado")] : nome];
+    });
   }
 
   function formatarData(valor) {
