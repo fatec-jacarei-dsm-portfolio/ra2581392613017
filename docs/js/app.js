@@ -312,16 +312,21 @@
 
     const contribuicao = texto(projeto.contribuicao);
     const descricao = texto(projeto.descricao);
+    const repositorio = linkRepositorio(projeto);
 
     return el("article", { class: "abp", id, "aria-labelledby": `${id}-nome` },
-      topo,
-      el("div", { class: "abp__linha" },
-        el("h4", { class: "abp__nome", id: `${id}-nome` }, projeto.nome),
-        linkRepositorio(projeto)),
-      descricao ? el("p", { class: "abp__descricao" }, descricao) : null,
-      contribuicao ? blocoContribuicao(contribuicao) : null,
-      tecnologias(projeto.tecnologias),
-      renderIntegracao(semestre.abp));
+      el("details", { class: "abp__detalhes" },
+        el("summary", { class: "abp__resumo" },
+          topo,
+          el("div", { class: "abp__linha" },
+            el("h4", { class: "abp__nome", id: `${id}-nome` }, projeto.nome),
+            icone("seta", "seta"))),
+        el("div", { class: "abp__corpo" },
+          repositorio ? el("p", { class: "abp__repo" }, repositorio) : null,
+          descricao ? el("p", { class: "abp__descricao" }, descricao) : null,
+          contribuicao ? blocoContribuicao(contribuicao) : null,
+          tecnologias(projeto.tecnologias),
+          renderIntegracao(semestre.abp))));
   }
 
   function renderIntegracao(integracao) {
