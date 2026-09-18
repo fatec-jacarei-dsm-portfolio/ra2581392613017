@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-17",
+  atualizadoEm: "2026-09-18",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -16,7 +16,7 @@ window.PORTFOLIO = {
     ],
     links: {
       github: "https://github.com/travensolli",
-      linkedin: "https://linkedin.com/in/travensolli",
+      linkedin: "https://www.linkedin.com/in/gabrieltravensolli/",
       pitch: null // opcional: link do vídeo pitch do semestre par mais recente
     }
   },
@@ -185,8 +185,11 @@ window.PORTFOLIO = {
   profissionais: [],
 
   complementar: {
-    formacao: ["Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)"],
-    cursos: ["Formação em Dados — DNC"],
+    formacao: [
+      "Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)",
+      "Bacharelado em Engenharia de Controle e Automação — UNIFEI, Campus Itabira (concluído em 12/2017)"
+    ],
+    cursos: [],
     idiomas: ["<idioma — nível>"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
