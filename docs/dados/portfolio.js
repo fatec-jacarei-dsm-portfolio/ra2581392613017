@@ -186,7 +186,7 @@ window.PORTFOLIO = {
 
   complementar: {
     formacao: ["Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)"],
-    cursos: ["Formação em Dados — DNC"],
+    cursos: [],
     idiomas: ["<idioma — nível>"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
