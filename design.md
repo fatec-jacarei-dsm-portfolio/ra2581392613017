@@ -225,6 +225,8 @@ Assistente Financeiro WhatsApp                     2025   repositório ↗
 
 Lista de definição (`<dl>`) com Formação · Cursos e certificações · Idiomas · Conhecimentos técnicos. Duas colunas a partir de 40rem. Conhecimentos técnicos aparecem como texto mono separado por " · ", sem ícones de marca.
 
+Cada curso pode ser só texto ou um objeto `{ nome, url }`. Com `url`, o nome ganha depois dele um link curto "certificado ↗" para a página de verificação do emissor, no mesmo padrão do "repositório ↗" dos projetos (§5.1). O link fica fora do nome porque `.link-externo` não quebra linha, e um nome longo estouraria em tela estreita.
+
 ### 3.7 Rodapé
 
 ```
@@ -950,7 +952,10 @@ window.PORTFOLIO = {
 
   complementar: {
     formacao: ["Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)"],
-    cursos: ["Formação em Dados — DNC"],
+    cursos: [
+      "Formação em Dados — DNC",                                                    // só texto
+      { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" } // com verificação
+    ],
     idiomas: ["<idioma — nível>"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
@@ -967,7 +972,8 @@ window.PORTFOLIO = {
 | Chave de `abp` não existe na grade (ex.: `"7DSM"`) | Aviso + item ignorado |
 | ABP, projeto pessoal ou profissional sem `contribuicao` | Aviso (campo obrigatório pela Fatec) |
 | Qualquer texto começando com `<` | Aviso "placeholder não preenchido" |
-| `repo` ou `demo` sem `https://` | Aviso + link não renderizado |
+| `repo`, `demo` ou `complementar.cursos[].url` sem `https://` | Aviso + link não renderizado |
+| Item de `complementar.cursos` em objeto sem `nome` | Aviso + item ignorado |
 | Campo obrigatório ausente | Aviso + item ignorado |
 
 **Montagem:**
