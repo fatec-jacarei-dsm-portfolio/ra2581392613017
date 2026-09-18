@@ -549,13 +549,13 @@ TRAJETÓRIA ACADÊMICA                                           Expandir tudo
 
 ### 6.4 Bloco ABP
 
-Primeiro item de todo semestre concluído ou em andamento. Âncora `#abp-1dsm`.
+Primeiro item de todo semestre concluído ou em andamento. Âncora `#abp-1dsm`. Assim como a linha de matéria (§6.5), é um `<details class="abp__detalhes">` fechado por padrão: só o resumo fica visível até o clique, e a navegação para a âncora abre o bloco automaticamente.
 
 | Parte | Especificação |
 |---|---|
 | Contêiner | Fundo `--papel-2`, `border-left: 3px solid var(--caneta)`, `border-radius: 0 var(--raio-m) var(--raio-m) 0`, `padding: var(--e-5)` (`--e-4` no mobile) |
-| Linha 1 | Rótulo `PROJETO INTEGRADOR · ABP` em `--caneta` + `1DSM – 1º Sem. 2026` em mono `--tinta-3`, à direita |
-| Linha 2 | Nome (`h4`, `--t-item`) + "repositório ↗" à direita (ou selo `privado`) |
+| Resumo (`<summary class="abp__resumo">`) | Linha 1: rótulo `PROJETO INTEGRADOR · ABP` em `--caneta` + `1DSM – 1º Sem. 2026` em mono `--tinta-3`, à direita. Linha 2: nome (`h4`, `--t-item`) + seta (§5.6), sempre visíveis |
+| Corpo (`<div class="abp__corpo">`, exibido ao expandir) | "repositório ↗" (ou selo `privado`), descrição, Minha parte, tecnologias e integra, nessa ordem |
 | Descrição | `--t-corpo` em `--tinta-2` |
 | **Minha parte** | Rótulo `MINHA PARTE` + parágrafo em `--tinta`, com `margin-block: var(--e-4)`. É o campo mais importante para a Fatec, por isso fica logo depois da descrição |
 | Tecnologias | §5.3 |
