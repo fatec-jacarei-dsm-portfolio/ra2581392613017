@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-17",
+  atualizadoEm: "2026-09-18",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
