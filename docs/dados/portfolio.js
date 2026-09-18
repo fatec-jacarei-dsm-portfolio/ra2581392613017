@@ -185,7 +185,10 @@ window.PORTFOLIO = {
   profissionais: [],
 
   complementar: {
-    formacao: ["Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)"],
+    formacao: [
+      "Tecnólogo em Desenvolvimento de Software Multiplataforma — Fatec Jacareí (2026–2028, em andamento)",
+      "Bacharelado em Engenharia de Controle e Automação — UNIFEI, Campus Itabira (concluído em 12/2017)"
+    ],
     cursos: [],
     idiomas: ["<idioma — nível>"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
