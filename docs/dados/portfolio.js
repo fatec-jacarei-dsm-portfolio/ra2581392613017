@@ -197,6 +197,7 @@ window.PORTFOLIO = {
       "Bacharelado em Engenharia de Controle e Automação — UNIFEI, Campus Itabira (concluído em 12/2017)"
     ],
     cursos: [
+      { nome: "IT Essentials — Cisco Networking Academy (jun. 2026)", url: "https://www.credly.com/badges/9887f694-50be-40ba-a09b-97e6e673a9b5" },
       { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" }
     ],
     idiomas: ["<idioma — nível>"],
