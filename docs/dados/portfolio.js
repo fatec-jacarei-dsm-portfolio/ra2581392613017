@@ -171,24 +171,24 @@ window.PORTFOLIO = {
     {
       nome: "Assistente Financeiro WhatsApp",
       descricao: "Assistente financeiro pessoal que integra mensagens do WhatsApp a uma base de dados financeira, com IA para analisar gastos.",
-      contribuicao: "<sua contribuição>",
-      tecnologias: ["Python", "OpenAI"],
+      contribuicao: "Projeto pessoal, feito sozinho. Montei o webhook em FastAPI que recebe as mensagens encaminhadas pela Twilio, a camada que envia o texto a um modelo de linguagem e devolve tipo, valor, descrição e forma de pagamento já estruturados, e a integração que grava cada registro na planilha do Google Sheets antes de responder a confirmação ao usuário. A primeira versão do interpretador eu havia escrito com processamento de linguagem natural em spaCy, e a troca pelo modelo generativo deu conta de frases que antes ficavam de fora. Publiquei a aplicação no Railway, com todas as credenciais em variáveis de ambiente.",
+      tecnologias: ["Python", "FastAPI", "Twilio", "Google Sheets", "Perplexity"],
       repo: "https://github.com/travensolli/assistente-financeiro-whatsapp",
       ano: 2025
     },
     {
       nome: "CR2 → JPEG Converter",
       descricao: "Conversão em lote de imagens RAW (CR2) da Canon para JPEG, com controle de qualidade.",
-      contribuicao: "<sua contribuição>",
-      tecnologias: ["Python"],
+      contribuicao: "Projeto pessoal, feito sozinho. Escrevi a aplicação inteira em Python, separando a interface em PySide6 do núcleo de conversão: leitura do RAW com rawpy, gravação do JPEG com Pillow e transferência do EXIF com piexif, já que o rawpy entrega só os pixels. A conversão roda em segundo plano, com progresso e cancelamento, e um arquivo com problema não interrompe o lote — ao final há um relatório exportável em CSV. Tratei a política de arquivos já existentes para nunca sobrescrever em silêncio, cobri o projeto com uma suíte de testes que inclui a interface e arquivos RAW sintéticos, e empacotei um executável para Windows com PyInstaller.",
+      tecnologias: ["Python", "PySide6", "rawpy", "Pillow", "pytest"],
       repo: "https://github.com/travensolli/cr2-jpeg-converter",
       ano: 2026
     },
     {
       nome: "Roda da Vida App",
       descricao: "Aplicação web para avaliar o equilíbrio pessoal nos 7 pilares do desenvolvimento pessoal, com gráfico radar e análise personalizada.",
-      contribuicao: "<sua contribuição>",
-      tecnologias: ["TypeScript", "React"],
+      contribuicao: "Projeto pessoal, feito sozinho. Construí as três telas em Next.js com TypeScript — apresentação, teste e relatório —, usando a Context API para levar as notas dos sete pilares de uma página à outra. Montei o gráfico radar com Recharts e escrevi os vinte e um blocos de devolutiva, que combinam pilar e faixa de pontuação para gerar a análise sem depender de serviço externo. Estilizei com Tailwind CSS, com layout responsivo e tema claro e escuro, e publiquei na Vercel.",
+      tecnologias: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Recharts"],
       repo: "https://github.com/travensolli/roda-da-vida-app",
       demo: "https://roda-da-vida-app.vercel.app",
       ano: 2026
@@ -196,7 +196,18 @@ window.PORTFOLIO = {
   ],
 
   // Mesmo formato de "pessoais". Grupo vazio não aparece no site.
-  profissionais: [],
+  profissionais: [
+    {
+      nome: "Teacher Thaís — Site institucional e captação de alunos",
+      descricao: "Site de uma professora particular de Inglês em Jacareí: apresenta o método e os planos, concentra o contato no WhatsApp com a mensagem preenchida conforme o ponto da página, e traz um teste de nivelamento de 12 questões corrigido no servidor, que grava o resultado em banco e envia à professora o diagnóstico do aluno por e-mail.",
+      contribuicao: "Desenvolvi o projeto sozinho, da marca ao deploy. Converti o manual da marca em um design system de tokens CSS e construí a página em HTML, CSS e JavaScript puro, sem framework e sem etapa de build. Escrevi a API em Node.js, que roda como rota Express em desenvolvimento e como função serverless em produção, sobre a mesma camada de lógica. Modelei quatro tabelas normalizadas no PostgreSQL do Supabase e implementei um teste de nivelamento cujo gabarito fica só no servidor: a correção grava o resultado no banco e envia à professora um diagnóstico por e-mail, questão a questão. Deixei textos, planos e preços editáveis por variável de ambiente, para a cliente atualizar o site sem depender de mim. Cuidei também do SEO local, dos cabeçalhos de segurança e do deploy contínuo na Vercel.",
+      tecnologias: ["JavaScript", "Node.js", "Express", "Supabase", "PostgreSQL", "Nodemailer", "Vercel"],
+      repo: "https://github.com/travensolli/teacher-thais-site",
+      demo: "https://teacherthais.com",
+      ano: 2026,
+      privado: true
+    }
+  ],
 
   complementar: {
     formacao: [

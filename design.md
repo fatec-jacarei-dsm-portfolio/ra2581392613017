@@ -69,10 +69,10 @@ Fonte: `github.com/fatec-jacarei-dsm-portfolio/informacoes` (Portfólio Digital 
 - [ ] **README** no template oficial: aluno, curso, turma `1º Sem. 2026`, link do Pages e vídeos 2DSM/4DSM/6DSM.
 - [ ] **Repositórios acadêmicos privados.** Quem avaliar verá 404. Tornar públicos (ou manter `privado: true` na config):
   `dev-web1-atv1`, `dev-web1-atv2`, `dev-web1-atv3`, `dev-web1-atv4`, `dev-web1-atv5`, `algoritmos-atividade7`, `backend-scrum-flow-abp`.
-- [ ] **"Minha parte" da ABP 1DSM** (obrigatório e o item mais importante).
+- [x] **"Minha parte"** da ABP 1DSM, dos três projetos pessoais e do projeto profissional (obrigatório e o item mais importante).
 - [ ] **Vídeo pitch 2DSM** (~1 min): quem sou, áreas de interesse, contribuições nas ABPs 1DSM e 2DSM, principais tecnologias.
 - [ ] **Foto** em `docs/img/foto.jpg`: quadrada, ≥ 400×400 px, ≤ 150 KB.
-- [ ] Preencher os placeholders `<…>` de `portfolio.js` (gostos pessoais, idiomas, contribuições).
+- [ ] Preencher os placeholders `<…>` restantes de `portfolio.js`: gostos pessoais e idiomas. As contribuições já estão preenchidas.
 
 ---
 
@@ -1120,6 +1120,12 @@ Fonte: *Ementário do Curso de DSM da Fatec Jacareí* (PDF oficial). **Carga hor
 | CR2 → JPEG Converter | `travensolli/cr2-jpeg-converter` | 2026 | público |
 | Roda da Vida App (+ demo) | `travensolli/roda-da-vida-app` | 2026 | público |
 
+### Profissionais
+
+| Projeto | Repositório | Ano | Visibilidade |
+|---|---|---|---|
+| Teacher Thaís — Site institucional (+ demo) | `travensolli/teacher-thais-site` | 2026 | privado |
+
 ### Fora do portfólio
 
 | Repositório | Motivo |
@@ -1218,6 +1224,6 @@ Cada item em branch própria, seguindo a §12:
 | 2 | `content/seed-1dsm-2dsm` | `portfolio.js` com o conteúdo da §11 |
 | 3 | `docs/readme-template` | README no template oficial da Fatec |
 | 4 | — (GitHub) | Tornar públicos os repositórios acadêmicos da §2.1 e remover `privado: true` numa branch `content/` |
-| 5 | `content/contribuicoes` | Preencher "Minha parte" da ABP e dos projetos pessoais, gostos pessoais e idiomas |
+| 5 | `content/contribuicoes` | Preencher os gostos pessoais e os idiomas. A "Minha parte" da ABP, dos projetos pessoais e do profissional já está feita |
 | 6 | `content/pitch-2dsm` | Gravar o pitch 2DSM e adicionar o link em `perfil.links.pitch` e no README |
 | 7 | `feature/seletor-de-tema` | Botão de tema na barra (§5.10), com persistência em `localStorage` |
