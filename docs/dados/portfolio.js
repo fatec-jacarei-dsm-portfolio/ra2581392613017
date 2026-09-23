@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-18",
+  atualizadoEm: "2026-09-23",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -142,6 +142,13 @@ window.PORTFOLIO = {
       repo: "https://github.com/travensolli/ies011-uml-sistema-academico",
       descricao: "Modelagem UML de um sistema acadêmico com diagrama de casos de uso, diagrama de classes e nove diagramas de sequência rastreados aos requisitos funcionais.",
       tecnologias: ["UML", "Astah"]
+    },
+    {
+      materia: "IBD-014",
+      nome: "Modelagem de vendas pelo Instagram",
+      repo: "https://github.com/travensolli/ibd014-modelagem-vendas-instagram",
+      descricao: "Modelagem conceitual e relacional em três etapas para um sistema de vendas pelo Instagram, com entidade associativa, pagamento fracionado e especialização de clientes em pessoa física e jurídica.",
+      tecnologias: ["brModelo", "DBDesigner", "Modelagem de Dados"]
     }
   ],
 
