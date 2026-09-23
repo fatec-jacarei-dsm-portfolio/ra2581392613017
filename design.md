@@ -203,22 +203,31 @@ Três listas curtas (`perfil` → `interesses`):
 
 ### 3.5 Outros projetos (`#projetos`)
 
-Dois grupos, **Pessoais** e **Profissionais**. Um grupo sem itens não é renderizado. O formato é de lista, não uma grade de cartões:
+Dois grupos, **Pessoais** e **Profissionais**. Um grupo sem itens não é renderizado. O formato é de lista, não uma grade de cartões, e cada item é **recolhível**, no mesmo padrão da ABP (§6.4): a descrição e a "Minha parte" somam texto demais para ficarem sempre abertas, e a lista fechada permite varrer os projetos de relance.
 
 ```
 PESSOAIS
 
-Roda da Vida App                                   2026   repositório ↗  demo ↗
-Aplicação web para avaliar o equilíbrio pessoal nos 7 pilares…
-MINHA PARTE  <sua contribuição>
-TypeScript · React
-─────────────────────────────────────────────────────────────────────────────
-Assistente Financeiro WhatsApp                     2025   repositório ↗
-…
+Roda da Vida App                                               2026   ›
+───────────────────────────────────────────────────────────────────────
+Assistente Financeiro WhatsApp                                 2025   ⌄
+repositório ↗
+Assistente financeiro pessoal que integra mensagens do WhatsApp…
+MINHA PARTE  Projeto pessoal, feito sozinho. Montei o webhook em FastAPI…
+Python · FastAPI · Twilio · Google Sheets · Perplexity
+───────────────────────────────────────────────────────────────────────
 ```
 
-- Nome em `h4`, com ano e links à direita (quebram para baixo no mobile).
-- Descrição em `--tinta-2`, "Minha parte" (§6.4) e tecnologias (§5.3).
+| Parte | Especificação |
+|---|---|
+| Resumo (`<summary class="projeto__resumo">`) | Nome (`h4`, `--t-item`) à esquerda; ano em mono `--tinta-3` e seta (§5.6) à direita. Quebram para baixo no mobile. Recolhido por padrão |
+| Corpo (`<div class="projeto__corpo">`, exibido ao expandir) | "repositório ↗" e "demo ↗" (ou selo `privado` no lugar do repositório), descrição, Minha parte e tecnologias, nessa ordem |
+| Descrição | `--t-corpo` em `--tinta-2` |
+| Minha parte | §6.4 |
+| Tecnologias | §5.3 |
+
+- Os links ficam no **corpo**, nunca no `summary`: uma âncora dentro do resumo disputaria o clique com o recolhimento.
+- Hover no resumo tinge o nome de `--caneta` e o foco usa `outline-offset: -2px`; ambos compartilham a regra com `.abp__resumo`.
 - Itens separados por `1px --linha`.
 
 ### 3.6 Complementar (`#complementar`)
@@ -652,7 +661,7 @@ A rolagem compensa a barra fixa com `scroll-margin-top: 72px`.
 
 | Elemento | Efeito | Duração / curva | Com `prefers-reduced-motion: reduce` |
 |---|---|---|---|
-| `<details>` (semestre, matéria) | Altura de 0 → auto | `--dur-media`, `--curva` | Abre instantaneamente |
+| `<details>` (semestre, matéria, ABP, projeto) | Altura de 0 → auto | `--dur-media`, `--curva` | Abre instantaneamente |
 | Seta | `rotate(0 → 90deg)` | `--dur-rapida` | Troca de estado sem animação |
 | Seções | `opacity 0→1` + `translateY(12px→0)`, uma vez, ao entrar na tela (IntersectionObserver, `threshold: 0.15`) | `--dur-lenta`, `--curva` | Visível direto |
 | Nó "em andamento" | Anel pulsante (`box-shadow` de 0 → 8px, esmaecendo) | `2.4s ease-out infinite` | Anel estático |

@@ -395,17 +395,21 @@
 
   function renderProjeto(projeto) {
     const contribuicao = texto(projeto.contribuicao);
+    const links = [linkRepositorio(projeto), projeto.demo ? linkExterno(projeto.demo, "demo") : null].filter(Boolean);
 
     return el("li", { class: "projeto" },
-      el("div", { class: "projeto__topo" },
-        el("h4", { class: "projeto__nome" }, projeto.nome),
-        el("div", { class: "projeto__links" },
-          el("span", { class: "projeto__ano" }, String(projeto.ano)),
-          linkRepositorio(projeto),
-          projeto.demo ? linkExterno(projeto.demo, "demo") : null)),
-      el("p", { class: "projeto__descricao" }, projeto.descricao),
-      contribuicao ? blocoContribuicao(contribuicao) : null,
-      tecnologias(projeto.tecnologias));
+      el("details", { class: "projeto__detalhes" },
+        el("summary", { class: "projeto__resumo" },
+          el("div", { class: "projeto__topo" },
+            el("h4", { class: "projeto__nome" }, projeto.nome),
+            el("div", { class: "projeto__meta" },
+              el("span", { class: "projeto__ano" }, String(projeto.ano)),
+              icone("seta", "seta")))),
+        el("div", { class: "projeto__corpo" },
+          links.length ? el("div", { class: "projeto__links" }, links) : null,
+          el("p", { class: "projeto__descricao" }, projeto.descricao),
+          contribuicao ? blocoContribuicao(contribuicao) : null,
+          tecnologias(projeto.tecnologias))));
   }
 
   function renderComplementar(complementar) {
