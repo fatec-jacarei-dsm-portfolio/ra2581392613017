@@ -1120,6 +1120,12 @@ Fonte: *Ementário do Curso de DSM da Fatec Jacareí* (PDF oficial). **Carga hor
 | CR2 → JPEG Converter | `travensolli/cr2-jpeg-converter` | 2026 | público |
 | Roda da Vida App (+ demo) | `travensolli/roda-da-vida-app` | 2026 | público |
 
+### Profissionais
+
+| Projeto | Repositório | Ano | Visibilidade |
+|---|---|---|---|
+| Teacher Thaís — Site institucional (+ demo) | `travensolli/teacher-thais-site` | 2026 | privado |
+
 ### Fora do portfólio
 
 | Repositório | Motivo |

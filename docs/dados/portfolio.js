@@ -196,7 +196,18 @@ window.PORTFOLIO = {
   ],
 
   // Mesmo formato de "pessoais". Grupo vazio não aparece no site.
-  profissionais: [],
+  profissionais: [
+    {
+      nome: "Teacher Thaís — Site institucional e captação de alunos",
+      descricao: "Site de uma professora particular de Inglês em Jacareí: apresenta o método e os planos, concentra o contato no WhatsApp com a mensagem preenchida conforme o ponto da página, e traz um teste de nivelamento de 12 questões corrigido no servidor, que grava o resultado em banco e envia à professora o diagnóstico do aluno por e-mail.",
+      contribuicao: "Desenvolvi o projeto sozinho, da marca ao deploy. Converti o manual da marca em um design system de tokens CSS e construí a página em HTML, CSS e JavaScript puro, sem framework e sem etapa de build. Escrevi a API em Node.js, que roda como rota Express em desenvolvimento e como função serverless em produção, sobre a mesma camada de lógica. Modelei quatro tabelas normalizadas no PostgreSQL do Supabase e implementei um teste de nivelamento cujo gabarito fica só no servidor: a correção grava o resultado no banco e envia à professora um diagnóstico por e-mail, questão a questão. Deixei textos, planos e preços editáveis por variável de ambiente, para a cliente atualizar o site sem depender de mim. Cuidei também do SEO local, dos cabeçalhos de segurança e do deploy contínuo na Vercel.",
+      tecnologias: ["JavaScript", "Node.js", "Express", "Supabase", "PostgreSQL", "Nodemailer", "Vercel"],
+      repo: "https://github.com/travensolli/teacher-thais-site",
+      demo: "https://teacherthais.com",
+      ano: 2026,
+      privado: true
+    }
+  ],
 
   complementar: {
     formacao: [
