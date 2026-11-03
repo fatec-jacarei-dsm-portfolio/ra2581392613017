@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-23",
+  atualizadoEm: "2026-11-03",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -149,6 +149,13 @@ window.PORTFOLIO = {
       repo: "https://github.com/travensolli/ibd014-modelagem-vendas-instagram",
       descricao: "Modelagem conceitual e relacional em três etapas para um sistema de vendas pelo Instagram, com entidade associativa, pagamento fracionado e especialização de clientes em pessoa física e jurídica.",
       tecnologias: ["brModelo", "DBDesigner", "Modelagem de Dados"]
+    },
+    {
+      materia: "ISW-029",
+      nome: "Atividade 3 — Injeção de dependência em API Express",
+      repo: "https://github.com/travensolli/isw029-atividade3",
+      descricao: "API Express com TypeScript e PostgreSQL para alunos, cursos e matrículas, refatorada para receber banco, repositórios e serviços por injeção de dependência, rodando com Docker Compose.",
+      tecnologias: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Docker"]
     }
   ],
 
