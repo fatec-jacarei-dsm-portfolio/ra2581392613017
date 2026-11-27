@@ -72,7 +72,7 @@ Fonte: `github.com/fatec-jacarei-dsm-portfolio/informacoes` (Portfólio Digital 
 - [x] **"Minha parte"** da ABP 1DSM, dos três projetos pessoais e do projeto profissional (obrigatório e o item mais importante).
 - [ ] **Vídeo pitch 2DSM** (~1 min): quem sou, áreas de interesse, contribuições nas ABPs 1DSM e 2DSM, principais tecnologias.
 - [ ] **Foto** em `docs/img/foto.jpg`: quadrada, ≥ 400×400 px, ≤ 150 KB.
-- [ ] Preencher os placeholders `<…>` restantes de `portfolio.js`: gostos pessoais e idiomas. As contribuições já estão preenchidas.
+- [x] Preencher os placeholders `<…>` restantes de `portfolio.js`: gostos pessoais e idiomas. As contribuições já estão preenchidas.
 
 ---
 
@@ -857,7 +857,7 @@ window.PORTFOLIO = {
   interesses: {
     estudo: ["Inteligência artificial aplicada", "Automação de processos", "Desenvolvimento web"],
     aplicacoes: ["Assistentes com LLMs (OpenAI, Gemini)", "Ferramentas de produtividade", "Integrações entre sistemas e APIs"],
-    foraDoCodigo: ["<hobby ou gosto pessoal>", "<outro gosto pessoal>"]
+    foraDoCodigo: ["Fotografia", "Corrida"]
   },
 
   // Atividades feitas nas matérias: uma entrada por atividade.
@@ -965,7 +965,7 @@ window.PORTFOLIO = {
       "Formação em Dados — DNC",                                                    // só texto
       { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" } // com verificação
     ],
-    idiomas: ["<idioma — nível>"],
+    idiomas: ["Inglês — intermediário", "Holandês — básico (entusiasta)"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
 };

@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-09-23",
+  atualizadoEm: "2026-11-27",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -24,7 +24,7 @@ window.PORTFOLIO = {
   interesses: {
     estudo: ["Inteligência artificial aplicada", "Automação de processos", "Desenvolvimento web"],
     aplicacoes: ["Assistentes com LLMs (OpenAI, Gemini)", "Ferramentas de produtividade", "Integrações entre sistemas e APIs"],
-    foraDoCodigo: ["<hobby ou gosto pessoal>", "<outro gosto pessoal>"]
+    foraDoCodigo: ["Fotografia", "Corrida"]
   },
 
   // Atividades feitas nas matérias: uma entrada por atividade.
@@ -149,6 +149,13 @@ window.PORTFOLIO = {
       repo: "https://github.com/travensolli/ibd014-modelagem-vendas-instagram",
       descricao: "Modelagem conceitual e relacional em três etapas para um sistema de vendas pelo Instagram, com entidade associativa, pagamento fracionado e especialização de clientes em pessoa física e jurídica.",
       tecnologias: ["brModelo", "DBDesigner", "Modelagem de Dados"]
+    },
+    {
+      materia: "ISW-029",
+      nome: "Atividade 3 — Injeção de dependência em API Express",
+      repo: "https://github.com/travensolli/isw029-atividade3",
+      descricao: "API Express com TypeScript e PostgreSQL para alunos, cursos e matrículas, refatorada para receber banco, repositórios e serviços por injeção de dependência, rodando com Docker Compose.",
+      tecnologias: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Docker"]
     }
   ],
 
@@ -218,7 +225,7 @@ window.PORTFOLIO = {
       { nome: "IT Essentials — Cisco Networking Academy (jun. 2026)", url: "https://www.credly.com/badges/9887f694-50be-40ba-a09b-97e6e673a9b5" },
       { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" }
     ],
-    idiomas: ["<idioma — nível>"],
+    idiomas: ["Inglês — intermediário", "Holandês — básico (entusiasta)"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
 };
