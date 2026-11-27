@@ -233,7 +233,13 @@ window.PORTFOLIO = {
       contribuicao: "Fui o Scrum Master nas três sprints: facilitei as dailies e as demais cerimônias, mantive o burndown e o Kanban, estruturei o repositório com Git Flow e produzi a documentação do projeto (atas, backlog, relatórios de contribuição, diagramas UML e modelos de banco). Como desenvolvedor, atuei no backend: criei o validador e sanitizador de CPF, o middleware de autenticação JWT, o repositório de usuários, as regras de validação do cadastro e a lógica de sorteio de questões, além dos scripts de inicialização e carga do PostgreSQL.",
       tecnologias: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "PostgreSQL", "JWT"]
     },
-    "2DSM": null // em desenvolvimento
+    "2DSM": {
+      nome: "EcoPulse — Estimativa do impacto ambiental de aplicações de software",
+      repo: "https://github.com/DEVassos/ecopulse-app",
+      descricao: "Plataforma web de observabilidade socioambiental (GreenOps) desenvolvida para o parceiro UniLaunch: descobre e monitora continuamente os serviços de uma empresa, converte as métricas de CPU, memória, disco e rede em consumo de energia (kWh) e pegada de carbono (gCO₂e) conforme a intensidade de carbono da região de cada serviço, e oferece dashboard em tempo real, comparação entre serviços, mapa das regiões, histórico de emissões e simulação de migração para regiões de matriz mais limpa. Desenvolvida em três sprints por uma equipe de cinco alunos.",
+      contribuicao: "Fui o Scrum Master nas três sprints: facilitei planejamentos, dailies, reviews com o parceiro e retrospectivas, mantive atas, burndown e plano de entregas e criei o agilekit, o kit de processo do time, com modelos de issue e PR, validações no CI, proteção das branches e uma release com tag por sprint. Como desenvolvedor, atuei sobretudo no frontend em React com TypeScript: os cards de estado e de impacto do Dashboard, a janela de detalhes de cada serviço, a página Comparação com gráficos de barras e de dispersão, a página Emissões com zoom por botões e por arrasto, o Relatório do período, a página Ajuda, o selo de rede limpa, o tema claro, as melhorias de acessibilidade, a validação das respostas da API e a tela de login. No backend, implementei o cadastro por convite e a troca de nome e senha, e levei o frontend, o backend e o PostgreSQL para o Docker Compose.",
+      tecnologias: ["TypeScript", "React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Docker", "JWT", "MapLibre GL"]
+    }
   },
 
   // Obrigatórios: nome, descricao, contribuicao, tecnologias, repo, ano. Opcionais: demo, privado.
