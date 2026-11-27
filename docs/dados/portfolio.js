@@ -151,11 +151,74 @@ window.PORTFOLIO = {
       tecnologias: ["brModelo", "DBDesigner", "Modelagem de Dados"]
     },
     {
+      materia: "ILP-036",
+      nome: "Atividade 1 — Types e interfaces em TypeScript",
+      repo: "https://github.com/travensolli/ilp036-atividade1",
+      descricao: "Dez exercícios sobre type e interface: união, interseção, herança múltipla, propriedades opcionais e verificação de excesso de propriedades, com as linhas inválidas comprovadas pelo próprio compilador em modo estrito.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "ILP-036",
+      nome: "Atividade 2 — Tipos genéricos",
+      repo: "https://github.com/travensolli/ilp036-atividade2",
+      descricao: "Dez exercícios com generics: funções, interfaces e classes parametrizadas, restrições com extends, inferência e uma função no padrão do useState que devolve o estado em tupla.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "ILP-036",
+      nome: "Atividade 3 — Modificadores, polimorfismo e exceções",
+      repo: "https://github.com/travensolli/ilp036-atividade3",
+      descricao: "Dez exercícios de orientação a objetos: Singleton com static e construtor privado, polimorfismo com interface e com classe abstrata e tratamento de exceções, com classes de erro próprias para saldo insuficiente e pilha vazia.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "ILP-036",
+      nome: "Atividade 4 — Funções como parâmetro e callbacks",
+      repo: "https://github.com/travensolli/ilp036-atividade4",
+      descricao: "Cinco exercícios sobre funções como valor: referência e chamada, tipos de função, uma função de ordem superior que soma, multiplica ou acha o maior valor conforme o callback e um pipeline de desconto, frete e imposto em que a ordem das operações muda o resultado.",
+      tecnologias: ["TypeScript", "Node.js"]
+    },
+    {
+      materia: "ISW-029",
+      nome: "Atividade 2 — Previsão do tempo com a BrasilAPI",
+      repo: "https://github.com/travensolli/isw029-atividade2",
+      descricao: "Aplicação React que busca cidades e mostra a previsão do tempo pela API do CPTEC na BrasilAPI, com o estado em Context API, tratamento das respostas de erro da API e build servido por Nginx em contêiner Docker.",
+      tecnologias: ["React", "TypeScript", "Vite", "Context API", "Docker"]
+    },
+    {
       materia: "ISW-029",
       nome: "Atividade 3 — Injeção de dependência em API Express",
       repo: "https://github.com/travensolli/isw029-atividade3",
       descricao: "API Express com TypeScript e PostgreSQL para alunos, cursos e matrículas, refatorada para receber banco, repositórios e serviços por injeção de dependência, rodando com Docker Compose.",
       tecnologias: ["TypeScript", "Node.js", "Express", "PostgreSQL", "Docker"]
+    },
+    {
+      materia: "MAT-019",
+      nome: "PRJ.15 — Teoria dos conjuntos no mapa com GeoPandas",
+      repo: "https://github.com/travensolli/matematica-computacional-geopandas",
+      descricao: "Aplicação web que cadastra áreas e estabelecimentos sobre o mapa de Jacareí e classifica cada área como escolar, industrial ou residencial pelo que ela contém, com a regra escrita como operações de conjuntos e o cruzamento geoespacial feito em GeoPandas, sem banco de dados.",
+      tecnologias: ["Python", "Flask", "GeoPandas", "Shapely", "React", "TypeScript", "Leaflet"]
+    },
+    {
+      materia: "IBD-015",
+      nome: "Lista P1 — Consultas SQL sobre uma base de vendas",
+      repo: "https://github.com/travensolli/ibd015-consultas-sql",
+      descricao: "Oito consultas em PostgreSQL sobre uma base de vendas, com INNER, LEFT e RIGHT JOIN, subconsultas correlacionadas e não correlacionadas e a combinação de JOIN com tabela derivada e agregação.",
+      tecnologias: ["PostgreSQL", "SQL"]
+    },
+    {
+      materia: "IED-005",
+      nome: "PRJ.ED.1 — Recursão com e sem cache",
+      repo: "https://github.com/travensolli/estrutura-dados-recursao",
+      descricao: "Trabalho em dupla com Andrea Turibio: fatorial, Fibonacci e Tribonacci recursivos com e sem memoização, com benchmark de tempo e memória, árvore de chamadas, fórmulas fechadas para o número de invocações e um relatório gerado pela própria aplicação para a apresentação.",
+      tecnologias: ["TypeScript", "Node.js", "Fastify", "React", "D3"]
+    },
+    {
+      materia: "IED-005",
+      nome: "P.2.3 — Fatorial recursivo com memoização",
+      repo: "https://github.com/travensolli/ied005-fatorial-memoizacao",
+      descricao: "Classe Factorial com versões recursivas com e sem cache e um benchmark de chamadas repetidas com n fixo, apresentado em gráfico log-log gerado sem bibliotecas e em um relatório com a análise de complexidade e os limites da pilha.",
+      tecnologias: ["TypeScript", "Node.js"]
     }
   ],
 
