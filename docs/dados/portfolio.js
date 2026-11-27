@@ -2,7 +2,7 @@
 // É o único arquivo editado no dia a dia. Campos marcados "opcional" podem ser omitidos.
 // Textos entre < > são placeholders: o app.js avisa no console enquanto não forem preenchidos.
 window.PORTFOLIO = {
-  atualizadoEm: "2026-11-03",
+  atualizadoEm: "2026-11-27",
 
   perfil: {
     nome: "Gabriel Travensolli da Silva",
@@ -24,7 +24,7 @@ window.PORTFOLIO = {
   interesses: {
     estudo: ["Inteligência artificial aplicada", "Automação de processos", "Desenvolvimento web"],
     aplicacoes: ["Assistentes com LLMs (OpenAI, Gemini)", "Ferramentas de produtividade", "Integrações entre sistemas e APIs"],
-    foraDoCodigo: ["<hobby ou gosto pessoal>", "<outro gosto pessoal>"]
+    foraDoCodigo: ["Fotografia", "Corrida"]
   },
 
   // Atividades feitas nas matérias: uma entrada por atividade.
@@ -225,7 +225,7 @@ window.PORTFOLIO = {
       { nome: "IT Essentials — Cisco Networking Academy (jun. 2026)", url: "https://www.credly.com/badges/9887f694-50be-40ba-a09b-97e6e673a9b5" },
       { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" }
     ],
-    idiomas: ["<idioma — nível>"],
+    idiomas: ["Inglês — intermediário", "Holandês — básico (entusiasta)"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
   }
 };
