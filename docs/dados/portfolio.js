@@ -223,7 +223,8 @@ window.PORTFOLIO = {
     ],
     cursos: [
       { nome: "IT Essentials — Cisco Networking Academy (jun. 2026)", url: "https://www.credly.com/badges/9887f694-50be-40ba-a09b-97e6e673a9b5" },
-      { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" }
+      { nome: "Curso básico de Git — Cursa (8 h, jun. 2026)", url: "https://cursa.com.br/certificate/5726f7073f" },
+      { nome: "Introdução a Metodologias Ágeis — TIC em Trilhas (24 h, ago. 2026)", url: "https://ticemtrilhas.org.br/certificate-validation?code=8d9c7af6-ec26-4783-92b4-d9cf7f925b14" }
     ],
     idiomas: ["Inglês — intermediário", "Holandês — básico (entusiasta)"],
     conhecimentos: ["Python", "TypeScript", "JavaScript", "React", "Node.js", "Express", "PostgreSQL", "Git", "Playwright", "RabbitMQ", "APIs OpenAI e Gemini"]
