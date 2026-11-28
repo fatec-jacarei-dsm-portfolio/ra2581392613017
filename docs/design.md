@@ -66,11 +66,11 @@ Fonte: `github.com/fatec-jacarei-dsm-portfolio/informacoes` (Portfólio Digital 
 
 ### 2.1 Pendências de conteúdo
 
-- [ ] **README** no template oficial: aluno, curso, turma `1º Sem. 2026`, link do Pages e vídeos 2DSM/4DSM/6DSM.
+- [x] **README** no template oficial: aluno, curso, turma `1º Sem. 2026`, link do Pages e vídeo do 2DSM. As linhas do 4DSM e do 6DSM voltam quando esses pitches forem gravados.
 - [ ] **Repositórios acadêmicos privados.** Quem avaliar verá 404. Tornar públicos (ou manter `privado: true` na config):
   `dev-web1-atv1`, `dev-web1-atv2`, `dev-web1-atv3`, `dev-web1-atv4`, `dev-web1-atv5`, `algoritmos-atividade7`, `backend-scrum-flow-abp`.
 - [x] **"Minha parte"** da ABP 1DSM, dos três projetos pessoais e do projeto profissional (obrigatório e o item mais importante).
-- [ ] **Vídeo pitch 2DSM** (~1 min): quem sou, áreas de interesse, contribuições nas ABPs 1DSM e 2DSM, principais tecnologias.
+- [x] **Vídeo pitch 2DSM** (~1 min): quem sou, áreas de interesse, contribuições nas ABPs 1DSM e 2DSM, principais tecnologias. Publicado como não listado: https://youtu.be/Hr8VLbtqK68
 - [ ] **Foto** em `docs/img/foto.jpg`: quadrada, ≥ 400×400 px, ≤ 150 KB.
 - [x] Preencher os placeholders `<…>` restantes de `portfolio.js`: gostos pessoais e idiomas. As contribuições já estão preenchidas.
 
