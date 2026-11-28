@@ -742,9 +742,9 @@ Regras gerais: nenhuma largura mínima maior que a tela, nada de rolagem horizon
 ```
 ra2581392613017/
 ├── README.md                     template oficial da Fatec
-├── design.md                     este documento (fora de docs/, não é publicado)
 └── docs/                         publicado pelo GitHub Pages
     ├── .nojekyll
+    ├── design.md                 este documento
     ├── index.html                esqueleto: header, main vazio, noscript, script do tema
     ├── css/
     │   └── estilo.css            tokens (§4) + componentes (§5–§6)
