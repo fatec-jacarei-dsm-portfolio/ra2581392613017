@@ -17,7 +17,7 @@ window.PORTFOLIO = {
     links: {
       github: "https://github.com/travensolli",
       linkedin: "https://www.linkedin.com/in/gabrieltravensolli/",
-      pitch: null // opcional: link do vídeo pitch do semestre par mais recente
+      pitch: "https://youtu.be/Hr8VLbtqK68" // opcional: link do vídeo pitch do semestre par mais recente
     }
   },
 
